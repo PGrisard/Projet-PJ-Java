@@ -335,6 +335,8 @@ public class Jeu {
 				}
 			}
 		}
+		System.out.println("Score joueur " + joueur1.getName() + " : " + totalJ1);
+		System.out.println("Score joueur " + joueur2.getName() + " : " + totalJ2);
 	}
 	
 	public int verifierFinDuJeu(int arret){
