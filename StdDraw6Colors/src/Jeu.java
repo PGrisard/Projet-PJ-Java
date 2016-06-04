@@ -14,9 +14,9 @@ public class Jeu {
 	private int totalJ1 = 0;
 	private int totalJ2 = 0;
 	
-	private int tailleGrille ;
-	private Color[] sixCouleurs = { Color.RED, Color.BLUE, Color.MAGENTA, Color.GREEN, Color.YELLOW, Color.ORANGE };
-	private Color[] sixCouleursObstacles={Color.RED,Color.BLUE,Color.MAGENTA,Color.GREEN,Color.YELLOW,Color.ORANGE,Color.BLACK};
+	private int tailleGrille;
+	private Color[] sixCouleurs = { Color.RED, Color.BLUE, Color.MAGENTA, Color.GREEN, Color.YELLOW, Color.GRAY };
+	private Color[] sixCouleursObstacles={Color.RED,Color.BLUE,Color.MAGENTA,Color.GREEN,Color.YELLOW,Color.GRAY,Color.BLACK};
 	Joueur joueur1 = new Joueur(1, Color.BLUE);
 	Joueur joueur2 = new Joueur(2, Color.RED);
 	private Grille grille;
@@ -146,7 +146,7 @@ public class Jeu {
 		Color oldColor = joueur.getColor();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("\n"+"Joueur " + joueur.getName() + " : Couleur : "+ joueur.getColor());
-		System.out.println("Choisissez une couleur : Rouge(1) Bleu(2) Violet(3) Jaune(4) Orange(5) Vert(6)");
+		System.out.println("Choisissez une couleur : Rouge(1) Bleu(2) Violet(3) Jaune(4) Gris(5) Vert(6)");
 		try {
 			int couleur = scanner.nextInt();
 
@@ -159,7 +159,7 @@ public class Jeu {
 			} else if (couleur == 4 && couleur != forbiddenColor && oldColor != Color.YELLOW) {
 				joueur.setColor(Color.YELLOW);
 			} else if (couleur == 5 && couleur != forbiddenColor && oldColor != Color.ORANGE) {
-				joueur.setColor(Color.ORANGE);
+				joueur.setColor(Color.GRAY);
 			} else if (couleur == 6 && couleur != forbiddenColor && oldColor != Color.GREEN) {
 				joueur.setColor(Color.GREEN);
 			} else {
@@ -200,7 +200,7 @@ public class Jeu {
 			forbiddenColor = 3;
 		} else if (joueur.getColor() == Color.YELLOW && forbiddenColor != 4) {
 			forbiddenColor = 4;
-		} else if (joueur.getColor() == Color.ORANGE && forbiddenColor != 5) {
+		} else if (joueur.getColor() == Color.GRAY && forbiddenColor != 5) {
 			forbiddenColor = 5;
 		} else if (joueur.getColor() == Color.GREEN && forbiddenColor != 6) {
 			forbiddenColor = 6;
@@ -274,7 +274,7 @@ public class Jeu {
 		if (couleurIJ == Color.YELLOW){
 			presenceCouleur[4]++;
 		}
-		if (couleurIJ == Color.ORANGE){
+		if (couleurIJ == Color.GRAY){
 			presenceCouleur[5]++;
 		}
 		if (couleurIJ == Color.GREEN){
@@ -307,7 +307,7 @@ public class Jeu {
 			forbiddenColor = 4;
 		}
 		else if (meilleureCouleur == 5){
-			joueur.setColor(Color.ORANGE);
+			joueur.setColor(Color.GRAY);
 			forbiddenColor = 5;
 		}
 		else if (meilleureCouleur == 6){

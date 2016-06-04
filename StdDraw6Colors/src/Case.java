@@ -4,7 +4,7 @@ import java.util.Random;
 public class Case {
 	private int appartientA;
 	private Color color;
-	private Color[] sixCouleurs={Color.RED,Color.BLUE,Color.MAGENTA,Color.GREEN,Color.YELLOW,Color.ORANGE};
+	private Color[] sixCouleurs={Color.RED,Color.BLUE,Color.MAGENTA,Color.GREEN,Color.YELLOW,Color.GRAY};
 
 	public Case() {
 		color=getRandomColor(sixCouleurs);

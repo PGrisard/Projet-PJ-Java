@@ -12,7 +12,7 @@ public class Grille {
 	private int totalJ2 = 0;
 	private int cycle;
 	private Color[] sixCouleurs = { Color.RED, Color.BLUE, Color.MAGENTA,
-			Color.GREEN, Color.YELLOW, Color.ORANGE};
+			Color.GREEN, Color.YELLOW, Color.GRAY};
 
 	public Case[][] getGrille() {
 		return Grille;
