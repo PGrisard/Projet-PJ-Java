@@ -105,9 +105,9 @@ public class Jeu {
 		System.out.println("Facile (1) Moyen (2) Difficile (3)");
 		try {
 			int difficulte = scanner.nextInt();
-			if (difficulte != 1 && difficulte != 2 && difficulte != 3){ 
+			if (difficulte < 1 || difficulte > 3){ 
 				System.out.println("Saisie incorrect, selectionnez une autre valeur");
-				choisirModeDeJeu();
+				choisirDifficulteIA();
 			}
 			difficulteIA = difficulte;
 		} catch (Exception e) {
@@ -120,7 +120,6 @@ public class Jeu {
 		int compteur = 1;
 		int arret = 0;
 		grille.affichage2D();
-		grille.affichage();
 		while (arret == 0) {
 			if (compteur % 2 == 0) {
 				if (modeDeJeu == 1){
@@ -137,7 +136,6 @@ public class Jeu {
 				grille.stepAppartenance(joueur1);
 			}
 			grille.affichage2D();
-			grille.affichage();
 			compteur++;
 			actualiserScore();
 			arret = verifierFinDuJeu(arret);
@@ -340,17 +338,17 @@ public class Jeu {
 	}
 	
 	public int verifierFinDuJeu(int arret){
-		if ((Math.pow(tailleGrille - nbObstacles,2))/totalJ1 < 2){
+		if ((Math.pow(tailleGrille,2)-nbObstacles)/totalJ1 < 2){
 			arret = 1;
 			System.out.println("Fin du jeu");
 			System.out.println("Le Joueur " + joueur1.getName() + " a gagne");
 		}
-		if ((Math.pow(tailleGrille - nbObstacles,2))/totalJ2 < 2){
+		if ((Math.pow(tailleGrille,2)-nbObstacles)/totalJ2 < 2){
 			arret = 1;
 			System.out.println("Fin du jeu");
 			System.out.println("Le Joueur " + joueur2.getName() + " a gagne");
 		}
-		if (Math.pow(tailleGrille - nbObstacles,2)/totalJ1 == 2 && Math.pow(tailleGrille - nbObstacles,2)/totalJ2 == 2){
+		if ((Math.pow(tailleGrille,2)-nbObstacles)/totalJ1 == 2 && (Math.pow(tailleGrille,2)-nbObstacles)/totalJ2 == 2){
 			arret = 1;
 			System.out.println("Egalite");
 		}

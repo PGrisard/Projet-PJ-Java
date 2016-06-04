@@ -69,10 +69,6 @@ public class Grille {
 	public void setTailleP(int tailleP) {
 		this.tailleP = tailleP;
 	}
-
-	public Color setColor(Color color) {
-		return color;
-	}
 	
 	public void affichage2D() {		
 		StdDraw.setCanvasSize(750, 710);
